@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="big">
+        <h1>ToDo list</h1>
+        <div>
+            <input type="text" id="txt">
+            <button id="btn">add</button>
+        </div>
+        <div id="active">
+            <h2>Active items</h2>
+
+        </div>
+        <div id="complete">
+            <h2>Completed items</h2>
+            <button id="nuke">NUKE</button>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        let submit = document.getElementById("btn");
+        let id = 0;
+        let salad = document.getElementById("nuke");
+        submit.addEventListener("click", function(e){
+        e.preventDefault()
+        id += 1;
+        let cheese = document.createElement("div")
+        cheese.addEventListener("click", function(e){
+            cheese.style.textDecoration = "line-through";
+            complete.appendChild(cheese);
+            cheese.querySelector("input[type = checkbox]").remove();});
+        let eggs = document.getElementById("txt").value
+        cheese.innerHTML = '<input id="sauce' + id + '" type="checkbox"><label>' + eggs + '</label>';
+        active.appendChild(cheese)});
+        salad.addEventListener("click", function(e){
+            while(complete.lastChild){
+                salad.removeChild(salad.firstElementChild)
+            };});
+    </script>
+</body>
+</html>
